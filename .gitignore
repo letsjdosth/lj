@@ -7,3 +7,7 @@ node_modules
 #임시 파일
 *.tmp
 *~
+
+#dist(es5변환파일)디렉토리
+dist
+public/dist
