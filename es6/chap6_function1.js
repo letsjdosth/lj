@@ -74,6 +74,7 @@ console.log(`hh 호출 후: pp.message='${pp.message}'`);
 // hh 호출 전: pp.message='초기값'
 // f 내부: pp.message="새로운 객체!"(할당 후)
 // hh 호출 후: pp.message='hh에서 수정함' //<-64번째줄은 지역내 pp 할당 이전이므로, 매개변수를 통해 pp에 대한 참조에 있는 객체를 수정하게 된다.
+//<-파이썬은 위같은 상황에 대해, 함수정의를 읽는순간 지역변수가 선언전 사용되었다는 에러를 뱉는다. js는 지역변수가 없으면, 전역 스코프를 알아서 검색한다.(설계상의 차이. 주의할 것)
 
 //js에서는 매개변수가 함수를 결정하지 않음. 
 //(자바처럼 매개변수에 수에 따라 함수를 다르게 취급하는 오버로딩 등이 불가능. 파이썬처럼 그냥 같은이름 함수는 언제나 한 객체임.)
@@ -96,6 +97,7 @@ function getSentence2([subject,verb,object]){ //배열을 해체한다면 대괄
 }
 const aaa=["I","love","JavaScript"];
 console.log(getSentence2(aaa)); //I love JavaScript
+//일반적으로 정의된 함수에 배열을 해체해 순서대로 넣고싶으면, 확산연산자를 이용해 ...arr 을 넘길 수 있음.(chap6_function2.js 120번째줄~ 참고)
 
 //확산 연산자 ... 를 이용한 추가 매개변수 이용
 //파이썬 *args, **kwargs와 비슷
@@ -119,7 +121,7 @@ console.log(defaultVal(5,6,7), defaultVal(5,6), defaultVal(5), defaultVal()); //
 
 
 //메서드
-//객체의 프로퍼티인 함수 (차이는 이후에)
+//객체의 프로퍼티인 함수. 객체에 묶인다. (차이는 이후에)
 //기존 방식
 const wall={
 	name:"Wallace",
