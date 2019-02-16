@@ -29,7 +29,7 @@ try{
 
 //예외 일으키기: throw
 //에러객체 말고 다른 객체나 숫자..문자열..등도 던질 수 있긴 함(이러지 말것ㅋㅋㅋ)
-transfer=function(to,amount){to.account.balance+=amount;};
+const transfer=function(to,amount){to.account.balance+=amount;};
 function billPay(amount, payee, account){
 	if(amount>account.balance){
 		throw new Error('insufficient funds');
@@ -49,7 +49,7 @@ function a(){
 function b(){
 	console.log('b: calling c');
 	c();
-	console.log('b: done')
+	console.log('b: done');
 }
 function c() {
 	console.log('c: throwing error');
