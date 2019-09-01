@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.2.2",
+    "moment-timezone": "^0.5.23",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
